@@ -21,7 +21,8 @@ public class StemmerIndoMain {
      */
     public static void main(String[] args) throws Exception {
         //contoh penggunaannya        
-        List dictionary = new Dictionary().read().getDictionaryData();
+//        List dictionary = new Dictionary().read().getDictionaryData();
+        List dictionary = new Dictionary().read("src/dictionary/dictionaries.properties").getDictionaryData(); //use specific path
         Stemmer stemmer = new Stemmer(dictionary);
         String word1 = "mempertanggungjawabkannya";
         String word2 = "terang-terangan";

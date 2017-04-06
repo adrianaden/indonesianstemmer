@@ -52,9 +52,9 @@ public class Stemmer {
     
     private String fetch(String keyword){
         this.rootWord = keyword;
-        this.rootWord = new Reduplikasi(dictionaries).remove(rootWord);
-        this.rootWord = new Suffiks(dictionaries).remove(rootWord);
-        this.rootWord = new Prefiks(dictionaries).remove(rootWord);
+        this.rootWord = new Reduplikasi(dictionaries).remove(rootWord);        
+        this.rootWord = new Suffix(dictionaries).remove(rootWord);
+        this.rootWord = new Prefix(dictionaries).remove(rootWord);
         return rootWord;
     }
 }

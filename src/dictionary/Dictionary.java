@@ -14,13 +14,13 @@ import java.util.List;
  *
  * @author adrianaden
  */
-public  class Dictionary {
-    
+public class Dictionary {
+
     private List dictionaryData;
     private final String filePath = "src/dictionary/dictionaries.properties";
-            
-    public Dictionary read() throws Exception {
-        FileReader file = new FileReader(this.filePath);
+
+    public Dictionary read(String path) throws Exception {
+        FileReader file = new FileReader(path);
         List bufferedDictionary = new ArrayList();
         try (BufferedReader br = new BufferedReader(file)) {
             String line;
@@ -31,11 +31,15 @@ public  class Dictionary {
         this.setDictionaryData(bufferedDictionary);
         return this;
     }
-    
+
+    public Dictionary read() throws Exception {
+        return this.read(this.filePath);
+    }
+
     public List getDictionaryData() {
         return this.dictionaryData;
     }
-    
+
     public void setDictionaryData(List dictionaryData) {
         this.dictionaryData = dictionaryData;
     }
